@@ -3,14 +3,13 @@ Create readme
 
 Initialize project in IDE
 Create interface for Math library
+Create mockup
 GUI interface
 Create tests for Math library
 Create Makefile
 Implementation of Math library
 Link GUI interface with Math library
 Profiling of Math library - standard deviation
-
-Create mockup
 
 Generate program documentation in Doxygen
 
@@ -21,6 +20,5 @@ User pdf documentation
 Create file odevzdani.txt
 Create file skutecnost.txt
 Create file hodnoceni.txt
-Create file xlogin_problemy-txt
 
 Create presentation
