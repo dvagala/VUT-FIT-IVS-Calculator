@@ -32,7 +32,8 @@
                                  - User pdf documentation
                                  - Create presentation
   
-          - xlonci00 Lončík Andrej - Generate program documentation in Doxygen
+          - xlonci00 Lončík Andrej - Create Makefile
+                                   - Generate program documentation in Doxygen
                                    - Create file odevzdani.txt
                                    - Create file skutecnost.tx
                                    - Create file hodnoceni.txt
@@ -46,7 +47,6 @@
   
           - xvinsj00 Vinš Jakub - Create interface for Math library
                                 - Create tests for Math library
-                                - Create Makefile
                                 - Implementation of Math library
                                 - Profiling of Math library - standard deviation
         
