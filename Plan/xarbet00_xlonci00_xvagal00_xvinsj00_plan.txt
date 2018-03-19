@@ -1,24 +1,30 @@
-Create project plan
-Create readme
+Deadlines:
 
-Initialize project in IDE
-Create interface for Math library
-Create mockup
-GUI interface
-Create tests for Math library
-Create Makefile
-Implementation of Math library
-Link GUI interface with Math library
-Profiling of Math library - standard deviation
+  19.3 - Create project plan 
+  
+  26.3 - Create readme 
+        Initialize project in IDE 
+        Create interface for Math library
+        Create mockup
 
-Generate program documentation in Doxygen
+  2.4 - GUI interface
+        Create tests for Math library
+        Create Makefile
 
-Program installer/uninstaller
+  9.4 - Implementation of Math library
+        Link GUI interface with Math library
+        Profiling of Math library - standard deviation
 
-User pdf documentation
+ 16.4 - Generate program documentation in Doxygen
+        Program installer/uninstaller
+        User pdf documentation
 
-Create file odevzdani.txt
-Create file skutecnost.txt
-Create file hodnoceni.txt
+ 19.4 - Create file odevzdani.txt
+        Create file skutecnost.txt
+        Create file hodnoceni.txt
 
-Create presentation
+  7.5 - Create presentation
+  
+Communication - facebook
+
+Hosting service - GitHub
