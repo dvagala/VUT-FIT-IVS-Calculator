@@ -1,30 +1,58 @@
-Deadlines:
+1. Deadlines
 
-  19.3 - Create project plan 
+     19.3 - Create project plan 
+
+     26.3 - Create readme 
+            Initialize project in IDE 
+            Create interface for Math library
+            Create mockup
+
+      2.4 - GUI interface
+            Create tests for Math library
+            Create Makefile
+
+      9.4 - Implementation of Math library
+            Link GUI interface with Math library
+            Profiling of Math library - standard deviation
+
+     16.4 - Generate program documentation in Doxygen
+            Program installer/uninstaller
+            User pdf documentation
+
+     19.4 - Create file odevzdani.txt
+            Create file skutecnost.txt
+            Create file hodnoceni.txt
+
+      7.5 - Create presentation
   
-  26.3 - Create readme 
-        Initialize project in IDE 
-        Create interface for Math library
-        Create mockup
+2. Task allocation
 
-  2.4 - GUI interface
-        Create tests for Math library
-        Create Makefile
-
-  9.4 - Implementation of Math library
-        Link GUI interface with Math library
-        Profiling of Math library - standard deviation
-
- 16.4 - Generate program documentation in Doxygen
-        Program installer/uninstaller
-        User pdf documentation
-
- 19.4 - Create file odevzdani.txt
-        Create file skutecnost.txt
-        Create file hodnoceni.txt
-
-  7.5 - Create presentation
+          - xarbet00 Arbet Matúš - Create readme 
+                                 - Program installer/uninstaller
+                                 - User pdf documentation
+                                 - Create presentation
   
-Communication - facebook
+          - xlonci00 Lončík Andrej - Generate program documentation in Doxygen
+                                   - Create file odevzdani.txt
+                                   - Create file skutecnost.tx
+                                   - Create file hodnoceni.txt
+  
+          - xvagal00 Vagala Dominik - Create project plan 
+                                    - Initialize project in IDE
+                                    - Create mockup
+                                    - GUI interface
+                                    - Link GUI interface with Math library
+                                    - Profiling of Math library - standard deviation
+  
+          - xvinsj00 Vinš Jakub - Create interface for Math library
+                                - Create tests for Math library
+                                - Create Makefile
+                                - Implementation of Math library
+                                - Profiling of Math library - standard deviation
+        
+3. Communication channels - facebook
 
-Hosting service - GitHub
+4. Version control - Git
+   Hosting service - GitHub
+        Repository - https://github.com/dvagala/IVS-project-2 - owned by Dominik Vagala
+                   - ivskontrola has acces to this private repository
