@@ -8,14 +8,14 @@
             Create mockup
 
       2.4 - GUI interface
-            Create tests for Math library
-            Create Makefile
+            Create tests for Math library            
 
       9.4 - Implementation of Math library
             Link GUI interface with Math library
             Profiling of Math library - standard deviation
 
-     16.4 - Generate program documentation in Doxygen
+     16.4 - Create Makefile
+            Generate program documentation in Doxygen
             Program installer/uninstaller
             User pdf documentation
 
