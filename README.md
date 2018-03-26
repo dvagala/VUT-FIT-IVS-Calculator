@@ -1,19 +1,19 @@
-Prostredi
+Prostredie
 ---------
 
-Ubuntu 64bit
 Windows 64bit
 
 Autori
 ------
 
-Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+Názov tímu: LastAttic
 
-Licence
+- xvagal00 Dominik Vagala 
+- xvinsj00 Jakub Vinš 
+- xarbet00 Matúš Arbet 
+- xlonci00 Andrej Ločík 
+
+Licencia
 -------
 
-Tento program je poskytovan...
+Tento software je poskytovaný pod licenciou GNU/GPL.
