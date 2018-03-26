@@ -5,6 +5,170 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator"  >
+        Title="Calculator" Height="500" Width="360" MinHeight="500" MinWidth="360" >
 
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="NumButton" >
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontFamily" Value="Source Sans Pro Light"/>
+            <Setter Property="Background" Value="#425062"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#3a4655" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                      AutoReverse="False" 
+                      Duration="0:0:0.2" 
+                      From="#425062" To="#58687c"
+                      AccelerationRatio="0" 
+                      Storyboard.TargetProperty="(StackPanel.Background).(SolidColorBrush.Color)"
+                      FillBehavior="HoldEnd">
+                                </ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="StackPanel.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                      AutoReverse="False" 
+                      Duration="0:0:0.1" 
+                      From="#58687c" To="#425062"
+                      AccelerationRatio="1" 
+                      Storyboard.TargetProperty="(StackPanel.Background).(SolidColorBrush.Color)"
+                      FillBehavior="HoldEnd">
+                                </ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#58687c"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#4f5c6e"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="OperatButton" >
+            <Setter Property="Foreground" Value="#bdc1c6"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontFamily" Value="Source Sans Pro Light"/>
+            <Setter Property="Background" Value="#404d5e"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#3a4655" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#58687c"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#4f5c6e"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="eqButton" >
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontFamily" Value="Source Sans Pro Light"/>
+            <Setter Property="Background" Value="#d05d4e"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#3a4655" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#e06c5d"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#d56658"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Window.Background>
+        <SolidColorBrush Color="#FF3A4655"/>
+    </Window.Background>
+
+    <Grid Opacity="1" Margin="0">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="110*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="6" Margin="0" >.</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="0" >0</Button>
+        <Button Style="{StaticResource eqButton}" Grid.Column="3" Grid.Row="6" Margin="0" >=</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="5" Margin="0" >1</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="5" Margin="0" >2</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="5" Margin="0" >3</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="5" Margin="0" >+</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="4" Margin="0" >4</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="4" Margin="0" >5</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="4" Margin="0" >6</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="4" Margin="0" >-</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="3" Margin="0" >7</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="3" Margin="0" >8</Button>
+        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="3" Margin="0" >9</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="3" Margin="0" >x</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="2" Margin="0" Foreground="#d05d4e" >C</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="2" Margin="0" FontSize="30" >⌫</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="2" Margin="0" >%</Button>
+        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="2" Margin="0" >/</Button>
+
+        <TextBox Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="4"  Margin="0, 0, 13, 0" BorderThickness="0" TextWrapping="Wrap" Text="2536 + 419 -" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" 
+                 Background="#3a4655" 
+                 Foreground="#bdc1c6"
+                 FontFamily="Source Sans Pro Light"
+                 FontSize="25"/>
+
+        <TextBox Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="4"  Margin="0, 0, 13, 0" BorderThickness="0" TextWrapping="Wrap" Text="2955" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" 
+                 Background="#3a4655" 
+                 Foreground="White"
+                 FontFamily="Source Sans Pro Light"
+                 FontSize="40"/>
+
+    </Grid>
 </Window>
