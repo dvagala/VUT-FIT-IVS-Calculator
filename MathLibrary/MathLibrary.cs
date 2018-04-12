@@ -5,40 +5,40 @@ namespace MathLibrary
 
     public class matho
     {
-        public double add(double a,double b)
+        public double Add(double a,double b)
         {
             double result = a + b;
             return result;
         }
 
-        public double sub(double a, double b)
+        public double Sub(double a, double b)
         {
             double result = a - b;
             return result;
         }
 
-        public double mul(double a, double b)
+        public double Mul(double a, double b)
         {
             double result = a * b;
             return result;
         }
 
-        public double div(double a, double b)
+        public double Div(double a, double b)
         {
             double result = a / b;
             return result;
         }
 
-        public double mod(double a, double b)
+        public double Mod(double a, double b)
         {
             double result = a % b;
             return result;
         }
 
-        public int fakt(double a)
+        public int Fakt(double a)
         {
             if (a < 0) { return -1; };//ked je cislo zaporne tak vrati -1 (fail hodnotu)
-            if (mod(a, 1) != 0) { return -1; };// ked je cislo desatinne tak vrati -1
+            if (Mod(a, 1) != 0) { return -1; };// ked je cislo desatinne tak vrati -1
             int result=1;
             for (int i=1; i <= a ;i++)
             {
@@ -47,17 +47,17 @@ namespace MathLibrary
             return result;
         }
 
-        public double root(double a, int b)
+        public double Root(double a, int moc)
         {
             double result = a;
-            for (int i=1;i<b;i++)
+            for (int i=1;i<moc;i++)
             {
                 result *= a;
             }
             return result;
         }
 
-        public double square_root(double num)
+        public double SquareRoot(double num)
         {
             if (num < 0) { return -1; }; // pokial je cislo zaporne, tak vrati -1 ( fail)
             if (num == 0) { return 0; };
