@@ -37,8 +37,8 @@ namespace MathLibrary
 
         public int Fakt(double a)
         {
-            if (a < 0) { return -1; };//ked je cislo zaporne tak vrati -1 (fail hodnotu)
-            if (Mod(a, 1) != 0) { return -1; };// ked je cislo desatinne tak vrati -1
+            if (a < 0) { return -1; };//if the number is negative it returns -1 (fail)
+            if (Mod(a, 1) != 0) { return -1; };// if the number is decimal, returns -1
             int result=1;
             for (int i=1; i <= a ;i++)
             {
@@ -59,7 +59,7 @@ namespace MathLibrary
 
         public double SquareRoot(double num)
         {
-            if (num < 0) { return -1; }; // pokial je cislo zaporne, tak vrati -1 ( fail)
+            if (num < 0) { return -1; }; // if the number is negative, returns -1 ( fail)
             if (num == 0) { return 0; };
             double x1 = (num * 1.0) / 2;
             double x2 = (x1 + (num / x1)) / 2;
