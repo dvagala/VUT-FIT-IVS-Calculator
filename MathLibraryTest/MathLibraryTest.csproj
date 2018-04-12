@@ -55,8 +55,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\MathLibrary.csproj">
-      <Project>{2a1a5818-6b6a-40a9-8167-b4675d437926}</Project>
+    <ProjectReference Include="..\MathLibrary\MathLibrary.csproj">
+      <Project>{8e37b47d-cb53-4253-806d-789d65d7194f}</Project>
       <Name>MathLibrary</Name>
     </ProjectReference>
   </ItemGroup>

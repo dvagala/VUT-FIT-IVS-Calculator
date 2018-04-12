@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MathLibrary;
 namespace MathLibraryTest
@@ -71,11 +71,11 @@ namespace MathLibraryTest
         public void MathLibraryRoot()
         {
             var sut = new matho();
-            Assert.AreEqual(sut.Root(2,2),4);
-            Assert.AreEqual(sut.Root(0,2),0);
-            Assert.AreEqual(sut.Root(1,10),1);
-            Assert.AreEqual(sut.Root(7,9), 40353607);
-            
+            Assert.AreEqual(sut.Root(2, 2), 4);
+            Assert.AreEqual(sut.Root(0, 2), 0);
+            Assert.AreEqual(sut.Root(1, 10), 1);
+            Assert.AreEqual(sut.Root(7, 9), 40353607);
+
 
         }
         [TestMethod]
@@ -83,22 +83,22 @@ namespace MathLibraryTest
         {
             var sut = new matho();
             Assert.AreEqual(sut.SquareRoot(4), 2);
-            Assert.AreEqual(sut.SquareRoot(5), 2,23606797749979);
+            Assert.AreEqual(sut.SquareRoot(5), 2, 23606797749979);
             Assert.AreEqual(sut.SquareRoot(0), 0);
             Assert.AreEqual(sut.SquareRoot(-5), -1);
-            Assert.AreEqual(sut.SquareRoot(2.2), 1,48323969741913);
+            Assert.AreEqual(sut.SquareRoot(2.2), 1, 48323969741913);
 
         }
         [TestMethod]
         public void MathLibraryMod()
         {
             var sut = new matho();
-            Assert.AreEqual(sut.Mod(7,2), 1);
-            Assert.AreEqual(sut.Mod(8,2), 0);
-            Assert.AreEqual(sut.Mod(45678,12315), 8733);
-            Assert.AreEqual(sut.Mod(6.99999,7), 6,99999);
+            Assert.AreEqual(sut.Mod(7, 2), 1);
+            Assert.AreEqual(sut.Mod(8, 2), 0);
+            Assert.AreEqual(sut.Mod(45678, 12315), 8733);
+            Assert.AreEqual(sut.Mod(6.99999, 7), 6, 99999);
 
         }
-        
+
     }
 }
