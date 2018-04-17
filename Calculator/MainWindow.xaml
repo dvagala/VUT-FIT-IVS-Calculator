@@ -166,7 +166,7 @@
         <Button x:Name="button_pow_y" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="2" Margin="0" Click="button_pow_y_Click" FontSize="18" >
             <TextBlock>x<Run FontSize="12" BaselineAlignment="Top" >y</Run></TextBlock>
         </Button>
-       
+
         <Button x:Name="button_sqr" Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="2" Margin="0" Click="button_sqr_Click" FontSize="18" >√x</Button>
         <Button x:Name="button_pow_2" Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="2" Margin="0" Click="button_pow_2_Click" FontSize="18" >x²</Button>
 

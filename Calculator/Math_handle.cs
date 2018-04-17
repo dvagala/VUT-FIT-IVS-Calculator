@@ -28,11 +28,9 @@ namespace Calculator
 
         // if there is result on display
         public bool result_state = false;
-
         private double result = 0;
 
         private Output_handle output_handle;
-
         private Matho matho;
 
         public Math_handle(Output_handle ouput_handle)
@@ -53,14 +51,14 @@ namespace Calculator
         public void sub_proceed()
         {
             // if display is empty the minus belongs to number, not intended as aritmetic operator
-            if( output_handle.is_display_empty() == true )
+            if (output_handle.is_display_empty() == true)
                 output_handle.print_on_display("-");
             else
             {
                 update_result_in_log();
                 output_handle.print_log(" - ");
                 actual_sign = sign.sub;
-            }                
+            }
         }
 
         public void mul_proceed()
@@ -134,7 +132,7 @@ namespace Calculator
                 output_handle.clear_display();
                 output_handle.print_on_display(result.ToString());
             }
-            
+
             result = 0;
             actual_sign = sign.none;
             result_state = true;
@@ -148,7 +146,7 @@ namespace Calculator
             output_handle.clear_display();
             output_handle.clear_log();
         }
-        
+
         private void update_result_in_log()
         {
             result = operation_result();
@@ -186,12 +184,9 @@ namespace Calculator
             if (actual_sign == sign.pow_2)
                 return matho.Pow(output_handle.get_num_on_display(), 2);
             if (actual_sign == sign.pow_y)
-                return matho.Pow(result, (int) output_handle.get_num_on_display());
+                return matho.Pow(result, (int)output_handle.get_num_on_display());
 
             return output_handle.get_num_on_display();
         }
-
-
-
     }
 }

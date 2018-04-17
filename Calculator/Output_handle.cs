@@ -21,7 +21,7 @@ namespace Calculator
 
         public void print_log(string item_to_add)
         {
-            this.log_display.Text += item_to_add;            
+            this.log_display.Text += item_to_add;
         }
 
         public void clear_log()
@@ -40,8 +40,8 @@ namespace Calculator
                 if (this.display.Text.Length == 0)
                     item_to_add = item_to_add.Insert(0, "0");
 
-                dec_in_display = true;                
-            }             
+                dec_in_display = true;
+            }
 
             this.display.Text += item_to_add;
         }

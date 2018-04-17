@@ -24,14 +24,14 @@ namespace Calculator
     public partial class MainWindow : Window
     {
         Output_handle output_handle;
-        Math_handle math_handle;        
+        Math_handle math_handle;
 
         public MainWindow()
         {
             InitializeComponent();
 
             output_handle = new Output_handle(this.display, this.log_display);
-            math_handle = new Math_handle(output_handle);                      
+            math_handle = new Math_handle(output_handle);
         }
 
         // for all numeric buttons

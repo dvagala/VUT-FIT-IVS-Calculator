@@ -12,7 +12,7 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibraryAdd()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.Add(3, 5), 8);
             Assert.AreEqual(sut.Add(-7, 1897), 1890);
             Assert.AreEqual(sut.Add(3.245, 5.245), 8.490);
@@ -23,7 +23,7 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibrarySub()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.Sub(3, 5), -2);
             Assert.AreEqual(sut.Sub(-7, 1897), -1904);
             Assert.AreEqual(sut.Sub(8.245, 5.240), 3, 005);
@@ -35,7 +35,7 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibraryMul()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.Mul(3, 5), 15);
             Assert.AreEqual(sut.Mul(-7, 1897), -13279);
             Assert.AreEqual(sut.Mul(8.245, 5.240), 43, 2038);
@@ -46,7 +46,7 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibraryDiv()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.Div(15, 3), 5);
             Assert.AreEqual(sut.Div(1897, 8), 237, 125);
             Assert.AreEqual(sut.Div(8.245, 1.25), 6, 596);
@@ -58,7 +58,7 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibraryFakt()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.Fakt(5), 120);
             Assert.AreEqual(sut.Fakt(-5), -1);
             Assert.AreEqual(sut.Fakt(2.5), -1);
@@ -70,18 +70,18 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibraryRoot()
         {
-            var sut = new matho();
-            Assert.AreEqual(sut.Root(2, 2), 4);
-            Assert.AreEqual(sut.Root(0, 2), 0);
-            Assert.AreEqual(sut.Root(1, 10), 1);
-            Assert.AreEqual(sut.Root(7, 9), 40353607);
+            var sut = new Matho();
+            Assert.AreEqual(sut.Pow(2, 2), 4);
+            Assert.AreEqual(sut.Pow(0, 2), 0);
+            Assert.AreEqual(sut.Pow(1, 10), 1);
+            Assert.AreEqual(sut.Pow(7, 9), 40353607);
 
 
         }
         [TestMethod]
         public void MathLibrarySquareRoot()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.SquareRoot(4), 2);
             Assert.AreEqual(sut.SquareRoot(5), 2, 23606797749979);
             Assert.AreEqual(sut.SquareRoot(0), 0);
@@ -92,7 +92,7 @@ namespace MathLibraryTest
         [TestMethod]
         public void MathLibraryMod()
         {
-            var sut = new matho();
+            var sut = new Matho();
             Assert.AreEqual(sut.Mod(7, 2), 1);
             Assert.AreEqual(sut.Mod(8, 2), 0);
             Assert.AreEqual(sut.Mod(45678, 12315), 8733);
