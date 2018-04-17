@@ -22,7 +22,7 @@ namespace MathLibrary
         int Fakt(double a);
 
         //returns a to the b power
-        double Root(double a, int b);
+        double Pow(double a, int b);
 
         //returns SquareRoot of num
         double SquareRoot(double num);

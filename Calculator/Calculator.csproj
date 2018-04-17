@@ -71,6 +71,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Math_handle.cs" />
+    <Compile Include="Output_handle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

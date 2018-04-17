@@ -3,7 +3,7 @@
 namespace MathLibrary
 {
 
-    public class matho
+    public class Matho
     {
         public double Add(double a, double b)
         {
@@ -47,7 +47,7 @@ namespace MathLibrary
             return result;
         }
 
-        public double Root(double a, int moc)
+        public double Pow(double a, int moc)
         {
             double result = a;
             for (int i = 1; i < moc; i++)
