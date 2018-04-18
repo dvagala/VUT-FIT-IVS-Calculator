@@ -5,14 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="500" Width="360" MinHeight="500" MinWidth="360" >
+        Title="Calculator" Height="500" Width="360" MinHeight="500" MinWidth="360" KeyDown="Window_KeyDown" >
 
     <Window.Resources>
-        <Style TargetType="Button" x:Key="NumButton" >
-            <Setter Property="Foreground" Value="White"/>
+
+        <Style TargetType="Button" x:Key="DefButton">
             <Setter Property="FontSize" Value="35"/>
             <Setter Property="FontFamily" Value="Source Sans Pro Light"/>
-            <Setter Property="Background" Value="#425062"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -64,27 +63,31 @@
             </Style.Triggers>
         </Style>
 
-        <Style TargetType="Button" x:Key="OperatButton" >
+        <Style TargetType="Button" x:Key="NumButton" BasedOn="{StaticResource DefButton}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#425062"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="OperatButton" BasedOn="{StaticResource DefButton}">
             <Setter Property="Foreground" Value="#bdc1c6"/>
-            <Setter Property="FontSize" Value="35"/>
-            <Setter Property="FontFamily" Value="Source Sans Pro Light"/>
-            <Setter Property="Background" Value="#404d5e"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="#3a4655" BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Background" Value="#FF414D5F"/>
             <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#58687c"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#4f5c6e"/>
-                </Trigger>
+                <EventTrigger RoutedEvent="StackPanel.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                      AutoReverse="False" 
+                      Duration="0:0:0.1" 
+                      From="#58687c" To="#FF414D5F"
+                      AccelerationRatio="1" 
+                      Storyboard.TargetProperty="(StackPanel.Background).(SolidColorBrush.Color)"
+                      FillBehavior="HoldEnd">
+                                </ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
             </Style.Triggers>
         </Style>
 
@@ -124,6 +127,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="110*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
@@ -138,37 +142,49 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="6" Margin="0" >.</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="0" >0</Button>
-        <Button Style="{StaticResource eqButton}" Grid.Column="3" Grid.Row="6" Margin="0" >=</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="5" Margin="0" >1</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="5" Margin="0" >2</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="5" Margin="0" >3</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="5" Margin="0" >+</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="4" Margin="0" >4</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="4" Margin="0" >5</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="4" Margin="0" >6</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="4" Margin="0" >-</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="3" Margin="0" >7</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="3" Margin="0" >8</Button>
-        <Button Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="3" Margin="0" >9</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="3" Margin="0" >x</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="2" Margin="0" Foreground="#d05d4e" >C</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="2" Margin="0" FontSize="30" >⌫</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="2" Margin="0" >%</Button>
-        <Button Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="2" Margin="0" >/</Button>
 
-        <TextBox Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="4"  Margin="0, 0, 13, 0" BorderThickness="0" TextWrapping="Wrap" Text="2536 + 419 -" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" 
+        <Button x:Name="button_dot" Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="7" Margin="0" Click="button_num_click">,</Button>
+        <Button x:Name="button_0" Style="{StaticResource NumButton}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Margin="0" Click="button_num_click" >0</Button>
+        <Button x:Name="button_eq" Style="{StaticResource eqButton}" Grid.Column="3" Grid.Row="7" Margin="0" Click="button_eq_Click" >=</Button>
+        <Button x:Name="button_1" Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="6" Margin="0" Click="button_num_click">1</Button>
+        <Button x:Name="button_2" Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="6" Margin="0" Click="button_num_click">2</Button>
+        <Button x:Name="button_3" Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="6" Margin="0" Click="button_num_click">3</Button>
+        <Button x:Name="button_plus" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="6" Margin="0" Click="button_plus_Click" >+</Button>
+        <Button x:Name="button_4" Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="5" Margin="0" Button.Click="button_num_click">4</Button>
+        <Button x:Name="button_5" Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="5" Margin="0" Click="button_num_click">5</Button>
+        <Button x:Name="button_6" Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="5" Margin="0" Click="button_num_click">6</Button>
+        <Button x:Name="button_sub" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="5" Margin="0" Click="button_sub_Click" >-</Button>
+        <Button x:Name="button_7" Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="4" Margin="0" Click="button_num_click">7</Button>
+        <Button x:Name="button_8" Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="4" Margin="0" Click="button_num_click" >8</Button>
+        <Button x:Name="button_9" Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="4" Margin="0" Click="button_num_click" >9</Button>
+        <Button x:Name="button_mul" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="4" Margin="0" Click="button_mul_Click" >x</Button>
+        <Button x:Name="button_C" Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="3" Margin="0" Foreground="#d05d4e" Click="button_C_Click" >C</Button>
+        <Button x:Name="button_bck" Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="3" Margin="0" FontSize="30" Click="button_bck_Click" >⌫</Button>
+        <Button x:Name="button_mod" Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="3" Margin="0" Click="button_mod_Click" >%</Button>
+        <Button x:Name="button_div" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="3" Margin="0" Click="button_div_Click" >/</Button>
+        <Button x:Name="button_fac" Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="2" Margin="0" Click="button_fac_Click" FontSize="18" >!</Button>
+        <Button x:Name="button_pow_y" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="2" Margin="0" Click="button_pow_y_Click" FontSize="18" >
+            <TextBlock>x<Run FontSize="12" BaselineAlignment="Top" >y</Run></TextBlock>
+        </Button>
+
+        <Button x:Name="button_sqr" Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="2" Margin="0" Click="button_sqr_Click" FontSize="18" >√x</Button>
+        <Button x:Name="button_pow_2" Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="2" Margin="0" Click="button_pow_2_Click" FontSize="18" >x²</Button>
+
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Right"  Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="4" >
+            <TextBox x:Name="log_display"  MaxLines="1"  VerticalScrollBarVisibility="Disabled" Focusable="False" IsReadOnly="True" Padding="13" BorderThickness="0"  VerticalAlignment="Stretch" VerticalContentAlignment="Center"
                  Background="#3a4655" 
                  Foreground="#bdc1c6"
                  FontFamily="Source Sans Pro Light"
-                 FontSize="25"/>
+                 FontSize="25" />
+        </Viewbox>
 
-        <TextBox Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="4"  Margin="0, 0, 13, 0" BorderThickness="0" TextWrapping="Wrap" Text="2955" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" 
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Right"  Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="4" >
+            <TextBox x:Name="display"  MaxLines="1" VerticalScrollBarVisibility="Disabled" Focusable="False" IsReadOnly="True" Padding="13" BorderThickness="0"  VerticalAlignment="Stretch" VerticalContentAlignment="Center"                   
                  Background="#3a4655" 
                  Foreground="White"
                  FontFamily="Source Sans Pro Light"
                  FontSize="40"/>
+        </Viewbox>
 
     </Grid>
 </Window>
