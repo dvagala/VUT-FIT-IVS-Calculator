@@ -13,20 +13,27 @@
 *.userprefs
 
 # Build results 
-[Dd]ebug/
+# [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
+# [Bb]in/
 [Oo]bj/
 [Ll]og/
 
-# exclude this library
-!*/
-!**/MathLibrary.dll
+# exclude this MathLibrary
+**/[Bb]in/*
+!**/[Bb]in/[Dd]ebug/
+
+**/[Dd]ebug/*
+!**/[Dd]ebug/netstandard2.0/
+
+**/[Dd]ebug/netstandard2.0/*
+!**/[Dd]ebug/netstandard2.0/MathLibrary.dll
+
 
 # Visual Studio 2015 cache/options directory
 .vs/
