@@ -8,6 +8,9 @@ using MathLibrary;
 
 namespace Calculator
 {
+    /**
+     *  Komentar pre Doxygen - test Gitu
+     */
     class Math_handle
     {
         private enum sign
