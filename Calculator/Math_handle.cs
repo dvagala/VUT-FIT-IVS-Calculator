@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*******************************************************************
+* Názov projektu: Calculator
+* Súbor: Math_handle.cs
+* 
+* Tým: LastAttic
+* Členovia: Arbet Matúš     <xarbet00>
+*           Lončík Andrej   <xlonci00>
+*           Vagala Dominik  <xvagal00>
+*           Vinš Jakub      <xvinsj00>
+*           
+* Popis: Trieda spracúvajúca chod programu, interakciu GUI s výpočtami skrz matematickú knižnicu
+*******************************************************************/
+
+/**
+ * @file Math_handle.cs 
+ * 
+ * @brief Trieda spracúvajúca chod programu, interakciu GUI s výpočtami skrz matematickú knižnicu
+ * @author Vagala Dominik
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +28,10 @@ using MathLibrary;
 
 namespace Calculator
 {
-    /**
-     *  Komentar pre Doxygen - test Gitu
-     */
+
     class Math_handle
     {
+        // definícia existujúcich operácií
         private enum sign
         {
             add,
@@ -27,15 +46,19 @@ namespace Calculator
             none
         }
 
+        // aktuálna operácia
         private sign actual_sign;
 
-        // if there is result on display
+        // ak je výsledok vypísaný na displeji
         public bool result_state = false;
         private double result = 0;
 
         private Output_handle output_handle;
         private Matho matho;
 
+        /**
+         * Konštruktor triedy
+         */
         public Math_handle(Output_handle ouput_handle)
         {
             this.output_handle = ouput_handle;
@@ -44,6 +67,9 @@ namespace Calculator
             actual_sign = sign.none;
         }
 
+        /**
+         * Funkcia spracuvajúca sčítanie
+         */
         public void add_proceed()
         {
             update_result_in_log();
@@ -51,6 +77,9 @@ namespace Calculator
             actual_sign = sign.add;
         }
 
+        /**
+         * Funkcia spracuvajúca odčítanie
+         */
         public void sub_proceed()
         {
             // if display is empty the minus belongs to number, not intended as aritmetic operator
@@ -64,6 +93,9 @@ namespace Calculator
             }
         }
 
+        /**
+         * Funkcia spracuvajúca násobenie
+         */
         public void mul_proceed()
         {
             update_result_in_log();
@@ -71,6 +103,9 @@ namespace Calculator
             actual_sign = sign.mul;
         }
 
+        /**
+         * Funkcia spracuvajúca delenie
+         */
         public void div_proceed()
         {
             update_result_in_log();
@@ -78,6 +113,9 @@ namespace Calculator
             actual_sign = sign.div;
         }
 
+        /**
+         * Funkcia spracuvajúca modulo
+         */
         public void mod_proceed()
         {
             update_result_in_log();
@@ -85,27 +123,39 @@ namespace Calculator
             actual_sign = sign.mod;
         }
 
+        /**
+         * Funkcia spracuvajúca faktoriál
+         */
         public void fac_proceed()
         {
             actual_sign = sign.fac;
             eq_proceed();
         }
 
+        /**
+         * Funkcia spracuvajúca druhú odmocninu
+         */
         public void sqr_proceed()
         {
             actual_sign = sign.sqr;
             eq_proceed();
         }
 
+        /**
+         * Funkcia spracuvajúca druhú mocninu
+         */
         public void pow_2_proceed()
         {
             actual_sign = sign.pow_2;
             eq_proceed();
         }
 
+        /**
+         * Funkcia spracuvajúca y-tú mocninu
+         */
         public void pow_y_proceed()
         {
-            // if exponent is decimal
+            // ak je exponent s desatinnou čiarkou
             if ((output_handle.get_num_on_display() % 1) > 0 && actual_sign == sign.pow_y)
             {
                 dec_exp_error();
@@ -120,10 +170,12 @@ namespace Calculator
             actual_sign = sign.pow_y;
         }
 
-        // print result on display
+        /**
+         * Funkcia spracuvajúca výpis výsledku na displej
+         */
         public void eq_proceed()
         {
-            // if exponent is decimal
+            // ak je exponent s desatinnou čiarkou
             if ((output_handle.get_num_on_display() % 1) > 0 && actual_sign == sign.pow_y)
             {
                 dec_exp_error();
@@ -141,6 +193,9 @@ namespace Calculator
             result_state = true;
         }
 
+        /**
+         * Funkcia spracuvajúca vyčistenie displeja
+         */
         public void C_proceed()
         {
             result = 0;
@@ -150,6 +205,9 @@ namespace Calculator
             output_handle.clear_log();
         }
 
+        /**
+         * Funckia, ktorá aktualizuje reťazec vo vedľajšom displeji
+         */
         private void update_result_in_log()
         {
             result = operation_result();
@@ -159,7 +217,9 @@ namespace Calculator
             output_handle.clear_display();
         }
 
-        // print decimal exponen error
+        /**
+         * Funckia spracuvajúca výpis chybovej hlášky, v situácií kedy je exponent s desatinnou čiarkou
+         */
         private void dec_exp_error()
         {
             output_handle.clear_log();
@@ -167,7 +227,11 @@ namespace Calculator
             output_handle.print_on_display("error: exponent is decimal!");
         }
 
-        // return result depending on actual_sign, if actual_sign is none, return what is on display
+        /**
+         * Funkcia spracuvajúca výsledok operácií kalkulačky
+         * 
+         * @return double výsledok zadanej operácie, respektíve iba číslo ak nebola zadaná žiadna operácia
+         */
         private double operation_result()
         {
             if (actual_sign == sign.add)
@@ -193,3 +257,4 @@ namespace Calculator
         }
     }
 }
+/*** Koniec súboru Math_handle.cs  ***/

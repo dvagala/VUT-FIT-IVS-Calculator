@@ -1,44 +1,106 @@
-﻿using System;
+﻿/*******************************************************************
+* Názov projektu: Calculator
+* Súbor: MathLibrary.cs
+* 
+* Tým: LastAttic
+* Členovia: Arbet Matúš     <xarbet00>
+*           Lončík Andrej   <xlonci00>
+*           Vagala Dominik  <xvagal00>
+*           Vinš Jakub      <xvinsj00>
+*           
+* Popis: Trieda matematickej knižnice
+*******************************************************************/
+
+/**
+ * @file MathLibrary.cs 
+ * 
+ * @brief Trieda matematickej knižnice
+ * @author Vinš Jakub
+ */
+
+using System;
 
 namespace MathLibrary
 {
 
     public class Matho
     {
+
+        /**
+         * Sčítanie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok sčítania ( a + b )
+         */
         public double Add(double a, double b)
         {
             double result = a + b;
             return result;
         }
 
+        /**
+         * Odčítanie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok odčítania ( a - b )
+         */
         public double Sub(double a, double b)
         {
             double result = a - b;
             return result;
         }
 
+        /**
+         * Násobenie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok násobenia ( a * b )
+         */
         public double Mul(double a, double b)
         {
             double result = a * b;
             return result;
         }
 
+        /**
+         * Delenie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok delenia ( a / b )
+         */
         public double Div(double a, double b)
         {
             double result = a / b;
             return result;
         }
 
+        /**
+         * Modulo
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double zvyšok po celočíselnom delení ( a % b )
+         */
         public double Mod(double a, double b)
         {
             double result = a % b;
             return result;
         }
 
+        /**
+         * Faktoriál čísla
+         * 
+         * @param a operand
+         * @return int výsledok faktoriálu ( a! ), respektíve -1 ak je operand záporný alebo nie je celočíselný
+         */
         public int Fakt(double a)
         {
-            if (a < 0) { return -1; };//if the number is negative it returns -1 (fail)
-            if (Mod(a, 1) != 0) { return -1; };// if the number is decimal, returns -1
+            if (a < 0) { return -1; };// ak je číslo záporné -> return -1 (fail)
+            if (Mod(a, 1) != 0) { return -1; };// ak je číslo s desatinnou čiarkou -> returns -1
             int result = 1;
             for (int i = 1; i <= a; i++)
             {
@@ -47,6 +109,13 @@ namespace MathLibrary
             return result;
         }
 
+        /**
+         * Mocnina
+         * 
+         * @param a základ mocniny
+         * @param moc exponent
+         * @return double výsledok mocnenia ( a^moc )
+         */
         public double Pow(double a, int moc)
         {
             double result = a;
@@ -57,9 +126,15 @@ namespace MathLibrary
             return result;
         }
 
+        /**
+         * Druhá odmocnina
+         * 
+         * @param num odmocňované číslo
+         * @return double výsledok odmocnenia ( num^(1/2) ), respektíve -1 ak je operand záporný
+         */
         public double SquareRoot(double num)
         {
-            if (num < 0) { return -1; }; // if the number is negative, returns -1 ( fail)
+            if (num < 0) { return -1; }; // ak je číslo záporné -> return -1 (fail)
             if (num == 0) { return 0; };
             double x1 = (num * 1.0) / 2;
             double x2 = (x1 + (num / x1)) / 2;
@@ -71,6 +146,12 @@ namespace MathLibrary
             return x2;
         }
 
+        /**
+         * Absolútna hodnota
+         * 
+         * @param v operand
+         * @return double absolútna hodnota operandu ( |v| )
+         */
         public double Abs(double v)
         {
             if (v < 0)
@@ -81,3 +162,4 @@ namespace MathLibrary
         }
     }
 }
+/*** Koniec súboru MathLibrary.cs  ***/
