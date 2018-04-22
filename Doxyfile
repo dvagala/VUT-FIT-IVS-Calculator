@@ -1,11 +1,11 @@
 # /*******************************************************************
-# * Názov projektu: Calculator
+# * NÃ¡zov projektu: Calculator
 # * 
-# * Tým: LastAttic
-# * Èlenovia: Arbet Matúš     <xarbet00>
-# *           Lonèík Andrej   <xlonci00>
+# * TÃ½m: LastAttic
+# * Ãˆlenovia: Arbet MatÃºÅ¡     <xarbet00>
+# *           LonÃ¨Ã­k Andrej   <xlonci00>
 # *           Vagala Dominik  <xvagal00>
-# *           Vinš Jakub      <xvinsj00>
+# *           VinÅ¡ Jakub      <xvinsj00>
 # *           
 # *******************************************************************/
 
@@ -801,7 +801,11 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  =
+INPUT                  = ./MathLibrary/IMathLibrary.cs \
+			                   ./MathLibrary/MathLibrary.cs \
+			                   ./Calculator/Math_handle.cs \
+			                   ./Calculator/Output_handle.cs \
+			                   ./Calculator/MainWindow.xaml.cs
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
