@@ -180,6 +180,13 @@ namespace Calculator
             {
                 dec_exp_error();
             }
+            // ak chceme spraviť faktoriál z čísla < 1
+            else if (matho.Fakt(output_handle.get_num_on_display()) == -1 && actual_sign == sign.fac)
+            {
+                output_handle.clear_log();
+                output_handle.clear_display();
+                output_handle.print_on_display("error: factorial is < 1!");
+            }
             else
             {
                 result = operation_result();
