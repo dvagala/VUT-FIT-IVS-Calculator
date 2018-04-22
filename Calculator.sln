@@ -11,7 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLibraryTest", "MathLibr
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CalculatorSetup", "CalculatorSetup\CalculatorSetup.vdproj", "{68E76860-502D-471A-B37B-3EE4E8262DEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profiling", "Profiling\Profiling.csproj", "{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}"
+EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -63,11 +68,26 @@ Global
 		{68E76860-502D-471A-B37B-3EE4E8262DEA}.Release|Any CPU.ActiveCfg = Release
 		{68E76860-502D-471A-B37B-3EE4E8262DEA}.Release|x64.ActiveCfg = Release
 		{68E76860-502D-471A-B37B-3EE4E8262DEA}.Release|x86.ActiveCfg = Release
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Debug|x64.Build.0 = Debug|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Debug|x86.Build.0 = Debug|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Release|x64.ActiveCfg = Release|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Release|x64.Build.0 = Release|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Release|x86.ActiveCfg = Release|Any CPU
+		{DB1E2FA0-2C4F-49DF-A392-F37CF87A6BE8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {362A685C-32AE-4FEF-86F0-7F471132F7AC}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
