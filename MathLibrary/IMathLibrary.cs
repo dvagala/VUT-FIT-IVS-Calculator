@@ -22,31 +22,82 @@ namespace MathLibrary
 {
     interface IMathLibrary
     {
-        // returns sum of a and b ( a + b)
+        /**
+         * Sčítanie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok sčítania ( a + b )
+         */
         double Add(double a, double b);
 
-        // returns division of a and b ( a - b)
+        /**
+         * Odčítanie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok odčítania ( a - b )
+         */
         double Sub(double a, double b);
 
-        // returns a multiplied by b ( a * b)
+        /**
+         * Násobenie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok násobenia ( a * b )
+         */
         double Mul(double a, double b);
 
-        // returns a divided by b ( a / b )
+        /**
+         * Delenie
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double výsledok delenia ( a / b )
+         */
         double Div(double a, double b);
 
-        // returns a modulo b ( a % b )
+        /**
+         * Modulo
+         * 
+         * @param a prvý operand
+         * @param b druhý operand
+         * @return double zvyšok po celočíselnom delení ( a % b )
+         */
         double Mod(double a, double b);
 
-        // returns factorial of number a ( a! )
+        /**
+         * Faktoriál čísla
+         * 
+         * @param a operand
+         * @return int výsledok faktoriálu ( a! ), respektíve -1 ak je operand záporný alebo nie je celočíselný
+         */
         int Fakt(double a);
 
-        // returns a to the b power ( a^moc ) 
+        /**
+         * Mocnina
+         * 
+         * @param a základ mocniny
+         * @param moc exponent
+         * @return double výsledok mocnenia ( a^moc )
+         */
         double Pow(double a, int b);
 
-        // returns SquareRoot of num ( num^(1/2) )
+        /**
+         * Druhá odmocnina
+         * 
+         * @param num odmocňované číslo
+         * @return double výsledok odmocnenia ( num^(1/2) ), respektíve -1 ak je operand záporný
+         */
         double SquareRoot(double num);
 
-        // returns absolute value of number v ( |v| )
+        /**
+         * Absolútna hodnota
+         * 
+         * @param v operand
+         * @return double absolútna hodnota operandu ( |v| )
+         */
         double Abs(double v);
     }
 }

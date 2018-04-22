@@ -1,0 +1,16 @@
+Rozdiel medzi plánom a skutoènosou
+
+Èasovı harmonogram, ktorı sme si na zaèiatku naplánovali, sa nám, 
+ako bıva zvykom, nepodarilo plni úplne presne. Vznikali nejaké drobné
+omeškania pri jednotlivıch úlohách. S tımto sme však v poèiatoènom
+pláne poèítali a nechali si dostatoènú rezervu na odchılky. Závereènı
+deadline odovzdania projektu sme tak bez problémov zvádli dodra.
+
+Rozdelenie úloh sa nám podarilo plni podla plánu. Pochopite¾ne sa však 
+vyskytla aj nejaká vzájomná pomoc pri problematickıch úlohách.
+
+Spoloènú komunikáciu v skupine sme realizovali cez Facebook, 
+príleitostne sa naskytla osobná konverzácia.
+
+Na spravovanie verzií sme vyuívali systém GIT ako bolo v pláne. 
+Konkrétne s hosujúcou slubou GitHub.
