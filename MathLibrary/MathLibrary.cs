@@ -74,6 +74,11 @@ namespace MathLibrary
          */
         public double Div(double a, double b)
         {
+            if(b == 0.0)
+            {
+                throw new DivideByZeroException();
+            }                
+
             double result = a / b;
             return result;
         }
@@ -95,13 +100,21 @@ namespace MathLibrary
          * Faktoriál čísla
          * 
          * @param a operand
-         * @return int výsledok faktoriálu ( a! ), respektíve -1 ak je operand záporný alebo nie je celočíselný
+         * @return int výsledok faktoriálu ( a! )
          */
-        public int Fakt(double a)
+        public double Fakt(double a)
         {
-            if (a < 0) { return -1; };// ak je číslo záporné -> return -1 (fail)
-            if (Mod(a, 1) != 0) { return -1; };// ak je číslo s desatinnou čiarkou -> returns -1
-            int result = 1;
+            if (a < 0 || Mod(a, 1) != 0)    // ak je a záporné, alebo s desatinnou čiarkou -> throw execption
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            if (a > 170)      // Ak je číslo > 170, tak faktoriál určite pretečie cez typ double, vyhneme sa zbytočnému zaťaženiu/pádu programu
+            {
+                return double.PositiveInfinity;
+            }
+
+            double result = 1;
             for (int i = 1; i <= a; i++)
             {
                 result *= i;
@@ -116,8 +129,12 @@ namespace MathLibrary
          * @param moc exponent
          * @return double výsledok mocnenia ( a^moc )
          */
-        public double Pow(double a, int moc)
+        public double Pow(double a, double moc)
         {
+            if (moc < 0 || Mod(moc, 1) != 0)    // ak je moc záporné, alebo s desatinnou čiarkou -> throw execption
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             double result = a;
             for (int i = 1; i < moc; i++)
             {
@@ -130,11 +147,14 @@ namespace MathLibrary
          * Druhá odmocnina
          * 
          * @param num odmocňované číslo
-         * @return double výsledok odmocnenia ( num^(1/2) ), respektíve -1 ak je operand záporný
+         * @return double výsledok odmocnenia ( num^(1/2) )
          */
         public double SquareRoot(double num)
         {
-            if (num < 0) { return -1; }; // ak je číslo záporné -> return -1 (fail)
+            if (num < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             if (num == 0) { return 0; };
             double x1 = (num * 1.0) / 2;
             double x2 = (x1 + (num / x1)) / 2;

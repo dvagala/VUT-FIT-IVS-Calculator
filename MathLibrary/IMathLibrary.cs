@@ -71,7 +71,7 @@ namespace MathLibrary
          * Faktoriál čísla
          * 
          * @param a operand
-         * @return int výsledok faktoriálu ( a! ), respektíve -1 ak je operand záporný alebo nie je celočíselný
+         * @return int výsledok faktoriálu ( a! )
          */
         int Fakt(double a);
 
@@ -88,7 +88,7 @@ namespace MathLibrary
          * Druhá odmocnina
          * 
          * @param num odmocňované číslo
-         * @return double výsledok odmocnenia ( num^(1/2) ), respektíve -1 ak je operand záporný
+         * @return double výsledok odmocnenia ( num^(1/2) )
          */
         double SquareRoot(double num);
 

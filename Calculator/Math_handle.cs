@@ -82,7 +82,7 @@ namespace Calculator
          */
         public void sub_proceed()
         {
-            // if display is empty the minus belongs to number, not intended as aritmetic operator
+            // Ak je display prázdny, znak mínus patrí ku číslu, neberie sa ako znak pre operáciu odčítať
             if (output_handle.is_display_empty() == true)
                 output_handle.print_on_display("-");
             else
@@ -154,20 +154,15 @@ namespace Calculator
          * Funkcia spracuvajúca y-tú mocninu
          */
         public void pow_y_proceed()
-        {
-            // ak je exponent s desatinnou čiarkou
-            if ((output_handle.get_num_on_display() % 1) > 0 && actual_sign == sign.pow_y)
+        {            
+            try
             {
-                dec_exp_error();
-                result = 0;
-                actual_sign = sign.none;
-                result_state = true;
-                return;
+                update_result_in_log();     // Ak sa vyskytol error, už sa o neho postaral operation result
+                output_handle.print_log(" ^ ");
+                actual_sign = sign.pow_y;
             }
+            catch { }
 
-            update_result_in_log();
-            output_handle.print_log(" ^ ");
-            actual_sign = sign.pow_y;
         }
 
         /**
@@ -175,25 +170,14 @@ namespace Calculator
          */
         public void eq_proceed()
         {
-            // ak je exponent s desatinnou čiarkou
-            if ((output_handle.get_num_on_display() % 1) > 0 && actual_sign == sign.pow_y)
-            {
-                dec_exp_error();
-            }
-            // ak chceme spraviť faktoriál z čísla < 1
-            else if (matho.Fakt(output_handle.get_num_on_display()) == -1 && actual_sign == sign.fac)
-            {
-                output_handle.clear_log();
-                output_handle.clear_display();
-                output_handle.print_on_display("error: factorial is < 1!");
-            }
-            else
+            try
             {
                 result = operation_result();
                 output_handle.clear_log();
                 output_handle.clear_display();
                 output_handle.print_on_display(result.ToString());
             }
+            catch { }
 
             result = 0;
             actual_sign = sign.none;
@@ -213,25 +197,23 @@ namespace Calculator
         }
 
         /**
-         * Funckia, ktorá aktualizuje reťazec vo vedľajšom displeji
-         */
+        * Funckia, ktorá aktualizuje reťazec vo vedľajšom displeji
+        */
         private void update_result_in_log()
         {
-            result = operation_result();
-
-            output_handle.clear_log();
-            output_handle.print_log(result.ToString());
-            output_handle.clear_display();
-        }
-
-        /**
-         * Funckia spracuvajúca výpis chybovej hlášky, v situácií kedy je exponent s desatinnou čiarkou
-         */
-        private void dec_exp_error()
-        {
-            output_handle.clear_log();
-            output_handle.clear_display();
-            output_handle.print_on_display("error: exponent is decimal!");
+            try
+            {
+                result = operation_result();
+                output_handle.clear_log();
+                output_handle.print_log(result.ToString());
+                output_handle.clear_display();
+            }
+            catch
+            {
+                result = 0;
+                actual_sign = sign.none;
+                result_state = true;
+            }
         }
 
         /**
@@ -241,26 +223,56 @@ namespace Calculator
          */
         private double operation_result()
         {
-            if (actual_sign == sign.add)
-                return matho.Add(result, output_handle.get_num_on_display());
-            if (actual_sign == sign.sub)
-                return matho.Sub(result, output_handle.get_num_on_display());
-            if (actual_sign == sign.mul)
-                return matho.Mul(result, output_handle.get_num_on_display());
-            if (actual_sign == sign.div)
-                return matho.Div(result, output_handle.get_num_on_display());
-            if (actual_sign == sign.mod)
-                return matho.Mod(result, output_handle.get_num_on_display());
-            if (actual_sign == sign.fac)
-                return matho.Fakt(output_handle.get_num_on_display());
-            if (actual_sign == sign.sqr)
-                return matho.SquareRoot(output_handle.get_num_on_display());
-            if (actual_sign == sign.pow_2)
-                return matho.Pow(output_handle.get_num_on_display(), 2);
-            if (actual_sign == sign.pow_y)
-                return matho.Pow(result, (int)output_handle.get_num_on_display());
+            try
+            {
+                if (actual_sign == sign.add)
+                    return matho.Add(result, output_handle.get_num_on_display());
+                if (actual_sign == sign.sub)
+                    return matho.Sub(result, output_handle.get_num_on_display());
+                if (actual_sign == sign.mul)
+                    return matho.Mul(result, output_handle.get_num_on_display());
+                if (actual_sign == sign.div)
+                    return matho.Div(result, output_handle.get_num_on_display());
+                if (actual_sign == sign.mod)
+                    return matho.Mod(result, output_handle.get_num_on_display());
+                if (actual_sign == sign.fac)
+                    return matho.Fakt(output_handle.get_num_on_display());
+                if (actual_sign == sign.sqr)
+                    return matho.SquareRoot(output_handle.get_num_on_display());
+                if (actual_sign == sign.pow_2)
+                    return matho.Pow(output_handle.get_num_on_display(), 2);
+                if (actual_sign == sign.pow_y)
+                    return matho.Pow(result, output_handle.get_num_on_display());
 
-            return output_handle.get_num_on_display();
+                return output_handle.get_num_on_display();
+            }
+
+            catch (ArgumentOutOfRangeException)
+            {
+                output_handle.clear_log();
+                output_handle.clear_display();
+                if (actual_sign == sign.fac)
+                {                    
+                    output_handle.print_on_display("Factorial cannot be decimal or < 1!");
+                }
+                if (actual_sign == sign.pow_y)
+                {
+                    output_handle.print_on_display("Exponent cannot be decimal or < 1!");
+                }
+                if (actual_sign == sign.sqr)
+                {
+                    output_handle.print_on_display("Square root of x cannot b < 0!");
+                }
+                throw;
+            }
+
+            catch (DivideByZeroException)
+            {
+                output_handle.clear_log();
+                output_handle.clear_display();
+                output_handle.print_on_display("Cannot divide by zero!");
+                throw;
+            }
         }
     }
 }

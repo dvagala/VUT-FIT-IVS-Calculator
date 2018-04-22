@@ -10,6 +10,7 @@
     <Window.Resources>
 
         <Style TargetType="Button" x:Key="DefButton">
+            <Setter Property="Focusable" Value="False"/>
             <Setter Property="FontSize" Value="35"/>
             <Setter Property="FontFamily" Value="Source Sans Pro Light"/>
             <Setter Property="Template">
