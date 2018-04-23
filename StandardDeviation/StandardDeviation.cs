@@ -7,8 +7,16 @@ namespace StandardDeviation
     {
         static void Main(string[] args)
         {
-            double[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
-            Console.WriteLine(StandDev(numbers));
+            try
+            {
+                double[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
+                Console.WriteLine(StandDev(numbers));
+            }
+            catch
+            {
+                Console.WriteLine("Wrong input!");
+            }
+            
             Console.ReadLine();
         }
         static double Average(double[] numbers)
@@ -32,7 +40,16 @@ namespace StandardDeviation
             {
                 StandDev = sut.Add(sut.Pow(sut.Sub(numbers[i], Avg),2),StandDev);
             }
-            StandDev = sut.Div(StandDev, (sut.Sub(N, 1)));
+
+            try
+            {
+                StandDev = sut.Div(StandDev, (sut.Sub(N, 1)));
+            }
+            catch(DivideByZeroException)
+            {
+                return 0;
+            }
+
             return sut.SquareRoot(StandDev);
         }
     }
