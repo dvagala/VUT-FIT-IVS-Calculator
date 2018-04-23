@@ -7,9 +7,17 @@ namespace StandardDeviation
     {
         static void Main(string[] args)
         {
-            double[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
+            double[] numbers = new double[10];
+            Random rand = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                numbers[i] = rand.Next(1, 5000);
+            }
+
+            //double[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);            
             Console.WriteLine(StandDev(numbers));
-            Console.ReadLine();
+            //Console.ReadLine();
         }
         static double Average(double[] numbers)
         {

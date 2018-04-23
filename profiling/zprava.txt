@@ -1,0 +1,5 @@
+﻿Program strávil najviac času v main funkcií a to hlavne kvôli vypisovaniu výsledku na console.
+Pri profilovaní programu s 10 vstupmi program volá najviac funkciu Abs.
+Pri profilovaní so vstupmi 100 a 1000 funkciu Add a funckie Sub, Pow a Mod.
+Pri takýchto časovo nezložitých funkciách a malej veľkosti vstupov nebolo možné zmerať koľko času program trávi v jednotlivých funkciách pri výpočte smerodatnej odchýlky.
+Pri optimalizácií je vhodné sa zamerať na tie funkcie, ktoré boli najviac volané, pretože s narastajúcimi vstupmi sa budú funckie viac volať a tým pádom aj narastať časová zložitosť celého programu.
