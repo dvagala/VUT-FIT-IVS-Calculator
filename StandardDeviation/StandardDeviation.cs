@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathLibrary;
+﻿using MathLibrary;
+using System;
 
-namespace Profiling
+namespace StandardDeviation
 {
-    class Profiler
+    class StandardDeviation
     {
         static void Main(string[] args)
         {
-            
             double[] numbers = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
             Console.WriteLine(StandDev(numbers));
             Console.ReadLine();
