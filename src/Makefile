@@ -1,11 +1,11 @@
 # /*******************************************************************
-# * NÃ¡zov projektu: Calculator
+# * Názov projektu: Calculator
 # * 
-# * TÃ½m: LastAttic
-# * Clenovia: Arbet MatÃºÅ¡     <xarbet00>
-# *           LoncÃ­k Andrej   <xlonci00>
+# * Tým: LastAttic
+# * Clenovia: Arbet Matúš     <xarbet00>
+# *           Loncík Andrej   <xlonci00>
 # *           Vagala Dominik  <xvagal00>
-# *           VinÅ¡ Jakub      <xvinsj00>
+# *           Vinš Jakub      <xvinsj00>
 # *           
 # *******************************************************************/
 
@@ -35,7 +35,7 @@ PROJ_GITHUB = IVS-project-2
 PROJ_FINAL = xarbet00_xlonci00_xvagal00_xvinsj00
 
 # Spustenie programu
-all: 	run
+all:	run
 
 # Spustenie programu
 run: 	
@@ -43,12 +43,12 @@ run:
 	$(ROOT_DIR)\$(PROJ_NAME)\bin\Release\$(PROJ_NAME).exe
 
 # Vycistenie projektu	
-clean:
+clean:	
 	
 
 # Zabalenie projektu
 pack:	
-        if exist $(ROOT_DIR)\$(PROJ_FINAL)\ rmdir /s /q $(ROOT_DIR)\$(PROJ_FINAL)
+	if exist $(ROOT_DIR)\$(PROJ_FINAL)\ rmdir /s /q $(ROOT_DIR)\$(PROJ_FINAL)
 	mkdir $(ROOT_DIR)\$(PROJ_FINAL)
 	mkdir $(ROOT_DIR)\$(PROJ_FINAL)\install
 	mkdir $(ROOT_DIR)\$(PROJ_FINAL)\doc
