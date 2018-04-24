@@ -6752,7 +6752,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:CalculatorSetup"
+        "ProductName" = "8:Calculator"
         "ProductCode" = "8:{C50043FD-F3C8-4BE9-B91B-A93836526953}"
         "PackageCode" = "8:{3326165D-D8A8-4565-B586-D6A9BDC13BE5}"
         "UpgradeCode" = "8:{B1FD1B27-600E-4FD2-ADC3-DEE9A7597B52}"
@@ -6765,7 +6765,7 @@
         "Manufacturer" = "8:LastAttic"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:CalculatorSetup"
+        "Title" = "8:Calculator"
         "Subject" = "8:"
         "ARPCONTACT" = "8:xarbet00_xlonci00_xvagal00_xvinsj00"
         "Keywords" = "8:"
