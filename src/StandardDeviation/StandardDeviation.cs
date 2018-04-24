@@ -1,4 +1,24 @@
-﻿using MathLibrary;
+﻿/*******************************************************************
+* Názov projektu: Calculator
+* Súbor: StandardDeviation.cs
+* 
+* Tým: LastAttic
+* Členovia: Arbet Matúš     <xarbet00>
+*           Lončík Andrej   <xlonci00>
+*           Vagala Dominik  <xvagal00>
+*           Vinš Jakub      <xvinsj00>
+*           
+* Popis: Profiling matematickej knižnice
+*******************************************************************/
+
+/**
+ * @file StandardDeviation.cs 
+ * 
+ * @brief Profiling matematickej knižnice
+ * @author Vinš Jakub
+ */
+
+using MathLibrary;
 using System;
 
 namespace StandardDeviation
@@ -19,6 +39,14 @@ namespace StandardDeviation
             
             Console.ReadLine();
         }
+
+        /**
+         * Spriemerovanie pola cisiel
+         * 
+         * @param a základ mocniny
+         * @param numbers pole cisiel na spriemerovanie
+         * @return double priemer
+         */
         static double Average(double[] numbers)
         {
             var sut = new Matho();
@@ -30,6 +58,12 @@ namespace StandardDeviation
             return sut.Div(Average,numbers.Length);
         }
 
+        /**
+         * Riadiaca funkcie profilingu
+         * 
+         * @param numbers pole cisiel vstupnych
+         * @return double výsledok profilingu
+         */
         static double StandDev(double[] numbers)
         {
             var sut = new Matho();
@@ -54,3 +88,4 @@ namespace StandardDeviation
         }
     }
 }
+/*** Koniec súboru StandardDeviation.cs  ***/
