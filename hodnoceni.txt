@@ -1,4 +1,4 @@
-xarbet00 75 (inštalátor, užívate¾ská príruèka)
-xlonci00 75 (makefile, programová dokumentácia)
-xvagal00 125 (základ, GUI a prepojenie s matematickou knižnicou)
-xvinsj00 125 (tvorba, testy a implementácia matematickej knižnice, profiling))
+xarbet00 85 (inštalátor, užívate¾ská príruèka)
+xlonci00 85 (makefile, programová dokumentácia)
+xvagal00 115 (základ, GUI a prepojenie s matematickou knižnicou)
+xvinsj00 115 (tvorba, testy a implementácia matematickej knižnice, profiling))
