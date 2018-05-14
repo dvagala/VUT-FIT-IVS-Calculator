@@ -93,6 +93,14 @@ namespace MathLibrary
         double SquareRoot(double num);
 
         /**
+         * Tretia odmocnina
+         * 
+         * @param num odmocňované číslo
+         * @return double výsledok odmocnenia ( num^(1/2) )
+         */
+        double ThirdRoot(double num);
+
+        /**
          * Absolútna hodnota
          * 
          * @param v operand

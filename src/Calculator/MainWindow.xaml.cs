@@ -165,6 +165,16 @@ namespace Calculator
         }
 
         /**
+         * Funkcia volajúca druhú odmocninu
+         * @ param sender implementovaná premenná
+         * @ param e implementovaná premenná
+         */
+        private void button_root_3_Click(object sender, RoutedEventArgs e)
+        {
+            math_handle.root_3_proceed();
+        }
+
+        /**
          * Funkcia volajúca druhú mocninu
          * @ param sender implementovaná premenná
          * @ param e implementovaná premenná

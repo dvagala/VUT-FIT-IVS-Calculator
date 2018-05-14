@@ -88,7 +88,19 @@ namespace MathLibraryTest
             Assert.AreEqual(sut.SquareRoot(2.2), 1, 48323969741913);
 
         }
-        [TestMethod]
+		[TestMethod]
+		public void MathLibraryThirdRoot()
+		{
+			var sut = new Matho();
+			Assert.AreEqual(sut.ThirdRoot(8), 2);
+			Assert.AreEqual(sut.ThirdRoot(125), 5);
+			Assert.AreEqual(sut.ThirdRoot(27), 3);
+			Assert.AreEqual(sut.ThirdRoot(67), 4);
+			Assert.AreEqual(sut.ThirdRoot(0), 0);
+			Assert.AreEqual(sut.ThirdRoot(-5), -1);
+
+		}
+		[TestMethod]
         public void MathLibraryMod()
         {
             var sut = new Matho();

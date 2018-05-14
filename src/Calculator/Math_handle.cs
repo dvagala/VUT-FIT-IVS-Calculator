@@ -38,6 +38,7 @@ namespace Calculator
             pow_2,
             pow_y,
             sqr,
+            root_3,
             none
         }
 
@@ -133,6 +134,15 @@ namespace Calculator
         public void sqr_proceed()
         {
             actual_sign = sign.sqr;
+            eq_proceed();
+        }
+
+        /**
+         * Funkcia spracuvajúca tretiu odmocninu
+         */
+        public void root_3_proceed()
+        {
+            actual_sign = sign.root_3;
             eq_proceed();
         }
 
@@ -234,6 +244,8 @@ namespace Calculator
                     return matho.Fakt(output_handle.get_num_on_display());
                 if (actual_sign == sign.sqr)
                     return matho.SquareRoot(output_handle.get_num_on_display());
+                if (actual_sign == sign.root_3)
+                    return matho.ThirdRoot(output_handle.get_num_on_display());
                 if (actual_sign == sign.pow_2)
                     return matho.Pow(output_handle.get_num_on_display(), 2);
                 if (actual_sign == sign.pow_y)
@@ -257,6 +269,10 @@ namespace Calculator
                 if (actual_sign == sign.sqr)
                 {
                     output_handle.print_on_display("Square root of x cannot b < 0!");
+                }
+                if (actual_sign == sign.root_3)
+                {
+                    output_handle.print_on_display("Cubic root of x cannot b < 0!");
                 }
                 throw;
             }

@@ -145,7 +145,7 @@
 
 
         <Button x:Name="button_dot" Style="{StaticResource NumButton}" Grid.Column="2" Grid.Row="7" Margin="0" Click="button_num_click">,</Button>
-        <Button x:Name="button_0" Style="{StaticResource NumButton}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Margin="0" Click="button_num_click" >0</Button>
+        <Button x:Name="button_0" Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="7" Margin="0" Click="button_num_click" >0</Button>
         <Button x:Name="button_eq" Style="{StaticResource eqButton}" Grid.Column="3" Grid.Row="7" Margin="0" Click="button_eq_Click" >=</Button>
         <Button x:Name="button_1" Style="{StaticResource NumButton}" Grid.Column="0" Grid.Row="6" Margin="0" Click="button_num_click">1</Button>
         <Button x:Name="button_2" Style="{StaticResource NumButton}" Grid.Column="1" Grid.Row="6" Margin="0" Click="button_num_click">2</Button>
@@ -163,11 +163,14 @@
         <Button x:Name="button_bck" Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="3" Margin="0" FontSize="30" Click="button_bck_Click" >⌫</Button>
         <Button x:Name="button_mod" Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="3" Margin="0" Click="button_mod_Click" >%</Button>
         <Button x:Name="button_div" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="3" Margin="0" Click="button_div_Click" >/</Button>
-        <Button x:Name="button_fac" Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="2" Margin="0" Click="button_fac_Click" FontSize="18" >!</Button>
+        <Button x:Name="button_fac" Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="7" Margin="0" Click="button_fac_Click" FontSize="25" >!</Button>
         <Button x:Name="button_pow_y" Style="{StaticResource OperatButton}" Grid.Column="3" Grid.Row="2" Margin="0" Click="button_pow_y_Click" FontSize="18" >
             <TextBlock>x<Run FontSize="12" BaselineAlignment="Top" >y</Run></TextBlock>
         </Button>
 
+        <Button x:Name="button_root_3" Style="{StaticResource OperatButton}" Grid.Column="0" Grid.Row="2" Margin="0" Click="button_root_3_Click" FontSize="18" >
+            <TextBlock><Run FontSize="12" BaselineAlignment="Top" >3</Run>√x</TextBlock>
+        </Button>
         <Button x:Name="button_sqr" Style="{StaticResource OperatButton}" Grid.Column="1" Grid.Row="2" Margin="0" Click="button_sqr_Click" FontSize="18" >√x</Button>
         <Button x:Name="button_pow_2" Style="{StaticResource OperatButton}" Grid.Column="2" Grid.Row="2" Margin="0" Click="button_pow_2_Click" FontSize="18" >x²</Button>
 

@@ -167,6 +167,32 @@ namespace MathLibrary
         }
 
         /**
+         * Tretia odmocnina
+         * 
+         * @param num odmocňované číslo
+         * @return double výsledok odmocnenia ( num^(1/2) )
+         */
+        public double ThirdRoot(double num)
+        {
+            if (num < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if (num == 0) { return 0; };
+
+            double x = 1;
+            double y = 1;
+
+            for(int i=0; i<500; i++)
+            {
+                x = y * (num + x) / (x + y);
+                y = x / y;
+            }
+
+            return y;
+        }
+
+        /**
          * Absolútna hodnota
          * 
          * @param v operand
