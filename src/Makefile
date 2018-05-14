@@ -28,6 +28,12 @@ PROJ_NAME = Calculator
 # Nazov instalatoru
 PROJ_INSTALLER = CalculatorSetup
 
+# Nazov testov
+PROJ_TESTS = MathLibraryTest
+
+# Nazov profilingu
+PROJ_PROFILING = StandardDeviation
+
 # Nazov GitHub repozitara
 PROJ_GITHUB = IVS-project-2
 
@@ -42,9 +48,13 @@ run:
 	$(MSBUILD) Calculator.sln $(PARAMETERS) /t:Clean,Build
 	$(ROOT_DIR)\$(PROJ_NAME)\bin\Release\$(PROJ_NAME).exe
 
-# Vycistenie projektu	
+# Vycistenie projektu
+FILES_TO_CLEAN="$(ROOT_DIR)\$(PROJ_NAME).sln.DotSettings.user" "$(PROJ_DIR)\$(PROJ_NAME).csproj.user" "$(ROOT_DIR)\$(PROJ_TESTS)\$(PROJ_TESTS).csproj.user" "$(ROOT_DIR)\$(PROJ_PROFILING)\$(PROJ_PROFILING).csproj.user"
+DIRS_TO_CLEAN="$(ROOT_DIR)\..\.vs" "$(ROOT_DIR)\packages" "$(ROOT_DIR)\$(PROJ_NAME)\bin" "$(ROOT_DIR)\$(PROJ_NAME)\obj" "$(ROOT_DIR)\$(PROJ_TESTS)\bin" "$(ROOT_DIR)\$(PROJ_TESTS)\obj" "$(ROOT_DIR)\$(PROJ_PROFILING)\bin" "$(ROOT_DIR)\$(PROJ_PROFILING)\obj" "$(ROOT_DIR)\$(PROJ_INSTALLER)\Debug" "$(ROOT_DIR)\$(PROJ_INSTALLER)\Release"	
 clean:	
-	
+	for %%f in ($(FILES_TO_CLEAN)) do ( if exist %%f del %%f )
+	for %%d in ($(DIRS_TO_CLEAN)) do ( if exist %%d del %%d /f /s /q 1>nul & rmdir %%d /s /q )
+	if exist $(ROOT_DIR)\$(PROJ_FINAL).zip del $(ROOT_DIR)\$(PROJ_FINAL).zip
 
 # Zabalenie projektu
 pack:	
