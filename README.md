@@ -1,3 +1,6 @@
+![](https://github.com/dvagala/VUT-FIT-IVS-project-2/blob/master/mockup/final_product.gif)
+
+
 Prostredie
 ---------
 
