@@ -1,4 +1,4 @@
-![](https://github.com/dvagala/VUT-FIT-IVS-project-2/blob/master/mockup/final_product.gif)
+![](https://github.com/dvagala/VUT-FIT-IVS-project-2/blob/master/mockup/final_product_wide.gif)
 
 
 Prostredie
